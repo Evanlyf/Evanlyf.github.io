@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>哈希</title>
+    <link href="/2022/08/16/%E5%93%88%E5%B8%8C/"/>
+    <url>/2022/08/16/%E5%93%88%E5%B8%8C/</url>
+    
+    <content type="html"><![CDATA[<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol><li><strong>哈希表</strong>的核心在于通过键访问数据值。时间复杂度接近于O(1)。</li><li><strong>哈希函数</strong>是一个将任意类型对象转换为整数的函数，hash值是区分不同对象的重要指标。</li><li>哈希函数特点：相同对象hash值一致，不同对象hash值<em>需要</em>不一致。</li><li>常用哈希函数有SHA-256, SHA-512, MD5等，能基本上保证不出现冲突。<br>而诸如取模运算、位运算等哈希函数，存在不同对象hash值可能一致的问题，也称哈希冲突。</li><li>哈希冲突是无法避免的，解决方法有：<strong>开放寻址法</strong>，<strong>链表法</strong>等。Java中 <strong>HashMap</strong> 采用链表法，而Python中的 <strong>dict</strong> 采用开放寻址法。</li></ol><h3 id="哈希冲突解决方法"><a href="#哈希冲突解决方法" class="headerlink" title="哈希冲突解决方法"></a>哈希冲突解决方法</h3><ol><li><p>开放寻址法</p><p> 发生哈希冲突后，按照某一次序找到下一个空闲的单元，把冲突的元素放入。包括线性探测法、平方探测法、双散列探测法等。</p></li><li><p>链表法</p><p> 将哈希值相同的元素构成一个链表，head放在hash表中。一般链表长度超过了8就转为红黑树，长度少于6个就变为链表。</p></li></ol><h3 id="Python字典中的hash"><a href="#Python字典中的hash" class="headerlink" title="Python字典中的hash"></a>Python字典中的hash</h3><ol><li><p>哈希表的写操作（put）<br>例如调用dict[“002931”] &#x3D; “王五”，意思是插入一组002931、value为王五的键值对。<br>第一步，通过哈希函数，把key转化成数组下标index（如5）；<br>第二步，如果数组下标5对应的位置没有元素，就把value值填充到数组下标为5的位置。</p></li><li><p>哈希表的读操作（get）<br>例如调用dict[“002936”]，意思是查找key为002936的Entry在哈希表中所对应的值。<br>第一步，通过哈希函数，把key转化成数组下标index（如2）；第二步，找到数组下标2所对应的元素，如果这个元素的key是002936，则找到；如果这个key不是002936，那么由于数组的每个元素都与一个链表对应，则可以顺着链表慢慢往下找，看看是否与key相匹配的节点。</p></li></ol><p>重点：哈希表可以说是数组和链表的结合，在算法应用中很普遍。哈希表是实现字典的其中一种方式，除了哈希表，实现字典的另一种常见方式是红黑树。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>DS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2022/07/23/hello-world/"/>
     <url>/2022/07/23/hello-world/</url>
